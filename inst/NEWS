@@ -27,12 +27,18 @@ URL:
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -------------------------------------------------------------
-VERSIONS tmt 0.3.1-2  |  2022-05-16  |  Last: tmt 0.3.0-20
+VERSIONS tmt 0.3.1-10  |  2024-08-11  |  Last: tmt 0.2.1-0
 -------------------------------------------------------------
-* fixed warning from CRAN
+# tmt 0.3.1-10
+* fixed 'Note' from CRAN submission (thanks UL) 
 
 -------------------------------------------------------------
-VERSIONS tmt 0.3.0-20  |  2022-01-19  |  Last: tmt 0.2.1-0
+VERSIONS tmt 0.3.1-8  |  2024-08-10  |  Last: tmt 0.2.1-0
+-------------------------------------------------------------
+* fixed testthat error caused by ggplot2
+
+-------------------------------------------------------------
+VERSIONS tmt 0.3.1-19  |  2022-01-19  |  Last: tmt 0.2.1-0
 -------------------------------------------------------------
 * added the feature of item parameter estimation of probabilistic MST designs
 * fixed tmt_sim function which ignored seed, when theta and or b where > 1

@@ -10,7 +10,7 @@
   # includes: in_header: "header.html"
   library(tmt)
 
-## ---- rm_nmst, warning=FALSE--------------------------------------------------
+## ----rm_nmst, warning=FALSE---------------------------------------------------
    # simulate some data 
  dat <- tmt:::sim.rm(theta = 100,b = 10,seed = 1111)
 
@@ -21,7 +21,7 @@
  summary(dat.rm)
 
 
-## ---- rm_mst, warning=FALSE---------------------------------------------------
+## ----rm_mst, warning=FALSE----------------------------------------------------
   # Example for multistage-design
   mstdesign <- "
     M1 =~ c(i1, i2, i3, i4, i5)
@@ -48,7 +48,7 @@
     # print summary of item parameters
   summary(dat.rm)
 
-## ---- rm_mst_cumulative, warning=FALSE----------------------------------------
+## ----rm_mst_cumulative, warning=FALSE-----------------------------------------
   # Example for multistage-design
    mstdesign <- "
     M1  =~ paste0('i',21:30)
@@ -80,7 +80,7 @@
     # print summary of item parameters
   summary(dat.rm)
 
-## ---- rm_lrtest, warning=FALSE------------------------------------------------
+## ----rm_lrtest, warning=FALSE-------------------------------------------------
     # simulate some data
   dat_nmst <- tmt:::sim.rm(theta = 100,b = 10,seed = 1111)
 
@@ -93,7 +93,7 @@
     # print summary
   summary(dat_lrt_nmst)
 
-## ---- rm_lrtest_mst, warning=FALSE--------------------------------------------
+## ----rm_lrtest_mst, warning=FALSE---------------------------------------------
     # example of multistage-design
   mstdesign <- "
     M1 =~ c(i1, i2, i3, i4, i5)
@@ -125,7 +125,7 @@
     # print summary
   summary(dat_lrt_mst)
 
-## ---- gmt, warning=FALSE------------------------------------------------------
+## ----gmt, warning=FALSE-------------------------------------------------------
     # example of multistage-design
   items <- seq(-1,1,length.out = 30)
   names(items) <- paste0("i",1:30)

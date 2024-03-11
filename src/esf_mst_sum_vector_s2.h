@@ -77,7 +77,7 @@ Rcpp::NumericVector esf_mst_sum_vector_s2(
       }
       for (kk = 0; kk < std::min<int>(maxSolved[ii], rr); kk++) {
 
-          if (((rr - (kk + 1) + ocol) <= 0) && (maxelement == 0) && (!cumulative[ii-1])) {
+          if (((rr - (kk + 1) + ocol) <= 0) & (maxelement == 0) & (!cumulative[ii-1])) {
           gamma0[rr + ncol] += eps[eps_position[ii] + kk] * probs[eps_position[ii] + ii + kk + 1] * probs[eps_position[ii-1] + ii - 1];
         } else if ((minSolved_design[ii] == 0) || ((rr >= minSolved_design[ii]) && (kk >= minSolved[ii] - 1)) ) {
           gamma0[rr + ncol] += gamma0[rr - (kk + 1) + ocol] * eps[eps_position[ii] + kk];

@@ -16,7 +16,8 @@
 #' @author Jan Steinfeld
 #'
 #' @importFrom stats qnorm 
-#' @importFrom ggplot2 ggplot aes_string geom_abline geom_point geom_text theme_minimal labs ggtitle ylab xlab theme element_text scale_fill_brewer geom_path
+#' @importFrom ggplot2 ggplot aes geom_abline geom_point geom_text theme_minimal labs ggtitle ylab xlab theme element_text scale_fill_brewer geom_path
+#' @importFrom rlang .data
 #' 
 #' @example ./R/.example_gmc.R
 #' 
@@ -124,10 +125,10 @@ tmt_gmc <- function (object,
         }
     }
 
-  p1 <- ggplot2::ggplot(daten, ggplot2::aes_string(x = "subg1", y = "subg2")) +
-    ggplot2::geom_abline(intercept = 0, slope = 1, size = 1.2) +
-    ggplot2::geom_point(ggplot2::aes_string(fill = "info"), shape = 21, colour = "#000000" , size = 6) +
-    ggplot2::geom_text(ggplot2::aes_string(label = "Items", vjust = 0.4), color = "black", size = 2) +
+  p1 <- ggplot2::ggplot(daten, ggplot2::aes(x = .data[["subg1"]], y = .data[["subg2"]])) +
+    ggplot2::geom_abline(intercept = 0, slope = 1, linewidth  = 1.2) +
+    ggplot2::geom_point(data = daten, mapping = ggplot2::aes(fill = .data[["info"]]), shape = 21, colour = "#000000" , size = 6) +
+    ggplot2::geom_text(data = daten, mapping = ggplot2::aes(label = .data[["Items"]], vjust = 0.4), color = "black", size = 2) +
     ggplot2::theme_minimal() + 
     ggplot2::labs(fill=legendtitle) +
     ggplot2::ggtitle(title) +
@@ -142,12 +143,12 @@ if (ellipse) {
         ellipse_i <- ellipse_i[ellipse_i[,"Items"]!=daten[1,"Items"],]
     }
         for(i in unique(ellipse_i$Items)){
-            p1 <- p1 + ggplot2::geom_path(ggplot2::aes_string(x = "x", y = "y"), 
+            p1 <- p1 + ggplot2::geom_path(mapping = ggplot2::aes(x = .data[["x"]], y = .data[["y"]]), 
                                           data = ellipse_i[ellipse_i$Items==i, ], 
                                           colour = "dimgray")
         }
         for (ii in seq(3, (4 * length(x) - 1), by = 2)) {
-            p1 <- p1 + ggplot2::geom_path(ggplot2::aes_string(x = "x", y = "y"), 
+            p1 <- p1 + ggplot2::geom_path(mapping = ggplot2::aes(x = .data[["x"]], y = .data[["y"]]), 
                                           data = line_i[ii:(ii + 1), ], 
                                           colour = "dimgray", 
                                           linetype = "dashed")

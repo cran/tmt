@@ -69,7 +69,7 @@ Useful links:
 
 Authors:
 \itemize{
-  \item Alexander Robitzsch \email{robitzsch@ipn.uni-kiel.de} (\href{https://orcid.org/0000-0002-8226-3132}{ORCID})
+  \item Alexander Robitzsch \email{robitzsch@leibniz-ipn.de} (\href{https://orcid.org/0000-0002-8226-3132}{ORCID})
 }
 
 }
