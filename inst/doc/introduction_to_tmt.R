@@ -12,7 +12,7 @@
 
 ## ----rm_nmst, warning=FALSE---------------------------------------------------
    # simulate some data 
- dat <- tmt:::sim.rm(theta = 100,b = 10,seed = 1111)
+ dat <- tmt:::sim.rm(theta = 100,b = 10,seed = c(1111,1112))
 
   # estimate item parameters
  dat.rm <- tmt_rm(dat = dat, optimization = "optim")
@@ -82,7 +82,7 @@
 
 ## ----rm_lrtest, warning=FALSE-------------------------------------------------
     # simulate some data
-  dat_nmst <- tmt:::sim.rm(theta = 100,b = 10,seed = 1111)
+  dat_nmst <- tmt:::sim.rm(theta = 100,b = 10,seed = c(1111,1112))
 
     # estimate item parameters
   dat_nmst_rm <- tmt_rm(dat = dat_nmst, optimization = "optim")
@@ -132,7 +132,7 @@
   persons = 100
   mean = 0
   sd = 1
-  dat <- tmt:::sim.rm(theta = persons, b = items, 1111)
+  dat <- tmt:::sim.rm(theta = persons, b = items, c(1111,1112))
   
   dat.rm <- tmt_rm(dat, optimization = "optim")
   dat.lrt <- tmt_lrtest(dat.rm, split = "median", optimization = "optim")

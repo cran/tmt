@@ -1,3 +1,6 @@
+# tmt 0.3.4-0
+* now cumulative designs are supported also for probabilistic MST designs
+
 # tmt 0.3.1-10
 * fixed 'Note' from CRAN submission (thanks UL) 
 
